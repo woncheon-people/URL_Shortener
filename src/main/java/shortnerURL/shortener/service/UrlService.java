@@ -2,6 +2,7 @@ package shortnerURL.shortener.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import shortnerURL.shortener.dto.UrlRequest;
 import shortnerURL.shortener.entity.Url;
 import shortnerURL.shortener.repository.UrlRepository;
 
@@ -16,9 +17,9 @@ public class UrlService {
         this.urlConversion = conversion;
     }
 
-    public String getShortUrl(String longUrl) {
+    public String getShortUrl(UrlRequest request) {
         Url url = new Url();
-        url.setLongUrl(longUrl);
+        url.setLongUrl(request.getLongUrl());
         Url entity = urlRepository.save(url);
 
         return urlConversion.encode(entity.getId());
