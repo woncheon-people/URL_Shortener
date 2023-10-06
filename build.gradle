@@ -27,6 +27,18 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.2'
+	implementation group: 'org.json', name: 'json', version: '20230227'
+	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+	implementation 'commons-validator:commons-validator:1.7'
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.2.0'
+
+
+
+
+
+
 }
 
 tasks.named('test') {
